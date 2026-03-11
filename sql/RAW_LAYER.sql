@@ -4,22 +4,22 @@ create or replace storage integration s3_int
 type= external_stage
 storage_provider=s3
 enabled=True
-storage_aws_role_arn='arn:aws:iam::068606397959:role/Snowflake_access' arn:aws:iam::068606397959:role/Snowflake_access
-storage_allowed_locations=('s3://snowflake-bootcamp-2025ajit/Cricket Analytics/')  arn:aws:iam::068606397959:role/Snowflake_access
+storage_aws_role_arn='arn:aws:iam::*******/Snowflake_access'
+storage_allowed_locations=('s3://******/Cricket Analytics/')
 
-describe storage integration s3_int  --arn:aws:iam::761587731547:user/fuqb1000-s PBC03780_SFCRole=5_RlI62K3MjwWxm/NdmtC9+py/QeM=
+describe storage integration s3_int  
 create or replace storage integration s3_int 
 type= external_stage
 storage_provider=s3
 enabled=True
-storage_aws_role_arn='arn:aws:iam::068606397959:role/Snowflake_access'
-storage_allowed_locations=('s3://snowflake-bootcamp-2025ajit/product/','s3://snowflake-bootcamp-2025ajit/Orders/','s3://snowflake-bootcamp-2025ajit/Cricket Analytics/')
+storage_aws_role_arn='arn:aws:iam::******:role/Snowflake_access'
+storage_allowed_locations=(''s3://*******/Cricket Analytics/')
 --storage_blocked_locations 
 
 create or replace stage s3_ext_stage
 storage_integration=s3_int
 FILE_FORMAT = (TYPE = JSON)
-url = 's3://snowflake-bootcamp-2025ajit/Cricket Analytics/'
+url = 's3://****/Cricket Analytics/'
 
 show stages;
 select * from @s3_ext_stage
